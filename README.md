@@ -22,33 +22,6 @@ ScreenCapture.disallowScreenshot(true);
 ScreenCapture.disallowScreenshot(false);
 ```
 
-## TO-DO
-
-```objective-c
-- (void)applicationWillResignActive:(UIApplication *)application {
-  UIView *colourView = [[UIView alloc]initWithFrame:self.window.frame];
-  colourView.backgroundColor = [UIColor whiteColor];
-  colourView.tag = 1234;
-  colourView.alpha = 0;
-  [self.window addSubview:colourView];
-  [self.window bringSubviewToFront:colourView];
-
-  // fade in the view
-  [UIView animateWithDuration:0.5 animations:^{
-    colourView.alpha = 1;
-  }];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication \*)application {
-  UIView \*colourView = [self.window viewWithTag:1234];
-  [UIView animateWithDuration:0.5 animations:^{
-    colourView.alpha = 0;
-  } completion:^(BOOL finished) {
-    [colourView removeFromSuperview];
-  }];
-}
-```
-
 ## Roadmap
 
 |   Status   | Platform | Goal                   |
