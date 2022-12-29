@@ -15,10 +15,10 @@ Pod::Spec.new do |s|
   # brief license entry:
   s.license      = "MIT"
   # optional - use expanded license entry instead:
+  s.license      = { :type => "MIT", :file => "LICENSE" }
   s.authors      = { "Recep Kocur" => "recepkocur@gmail.com" }
   s.platforms    = { :ios => "9.0" }
   s.source       = { :git => "https://github.com/recepkocur/react-native-screen-capture.git", :tag => "#{s.version}" }
-  s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.source_files = "ios/**/*.{h,c,cc,cpp,m,mm,swift}"
   s.requires_arc = true
