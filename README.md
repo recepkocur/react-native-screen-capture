@@ -4,6 +4,8 @@
 
 **`react-native-screen-capture`** allows you to protect screens in your app from being captured or recorded, as well as be notified if a screenshot is taken while your app is foregrounded.
 
+**Keep Awake** provides a React hook that prevents the screen from sleeping and a pair of functions to enable this behavior imperatively.
+
 ## Installation
 
 ```sh
