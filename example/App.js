@@ -8,11 +8,11 @@
  * https://github.com/facebook/react-native
  */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Platform, StyleSheet, Text, View, TouchableOpacity, } from 'react-native';
 import ScreenCapture from 'react-native-screen-capture';
 
-export default class App extends Component<{}> {
+export default class App extends PureComponent {
   state = {
     disallowScreenshot: false,
     keepAwake: false,
@@ -59,15 +59,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
   },
 });
