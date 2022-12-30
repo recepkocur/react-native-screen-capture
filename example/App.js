@@ -9,29 +9,45 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, TouchableOpacity, } from 'react-native';
 import ScreenCapture from 'react-native-screen-capture';
 
 export default class App extends Component<{}> {
   state = {
-    status: 'starting',
-    message: '--'
+    disallowScreenshot: false,
+    keepScreen: false,
   };
   componentDidMount() {
-    ScreenCapture.sampleMethod('Testing', 123, (message) => {
-      this.setState({
-        status: 'native callback received',
-        message
-      });
-    });
+    ScreenCapture.disallowScreenshot(this.state.disallowScreenshot)
+    ScreenCapture.keepScreen(this.state.keepScreen)
+    // ScreenCapture.sampleMethod('Testing', 123, (message) => {
+    //   this.setState({
+    //     status: 'native callback received',
+    //     message
+    //   });
+    // });
   }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>☆ScreenCapture example☆</Text>
-        <Text style={styles.instructions}>STATUS: {this.state.status}</Text>
-        <Text style={styles.welcome}>☆NATIVE CALLBACK MESSAGE☆</Text>
-        <Text style={styles.instructions}>{this.state.message}</Text>
+        <TouchableOpacity onPress={() => {
+          this.setState({
+            disallowScreenshot: !this.state.disallowScreenshot
+          }, () => {
+            ScreenCapture.disallowScreenshot(this.state.disallowScreenshot)
+          })
+        }} style={{ padding: 15, backgroundColor: this.state.disallowScreenshot ? '#FF6666' : '#5BE55B', margin: 15 }}>
+          <Text>{!this.state.disallowScreenshot ? 'Allow' : 'Disallow'} screenshot</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.setState({
+            keepScreen: !this.state.keepScreen
+          }, () => {
+            ScreenCapture.keepScreen(this.state.keepScreen)
+          })
+        }} style={{ padding: 15, backgroundColor: this.state.keepScreen ? '#5BE55B' : '#FF6666', margin: 15 }}>
+          <Text>Keep screen {!this.state.keepScreen ? 'OFF' : 'ON'}</Text>
+        </TouchableOpacity>
       </View>
     );
   }
