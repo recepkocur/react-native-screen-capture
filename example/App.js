@@ -14,8 +14,8 @@ import ScreenCapture from 'react-native-screen-capture';
 
 export default class App extends PureComponent {
   state = {
-    disallowScreenshot: false,
-    keepAwake: false,
+    disallowScreenshot: true,
+    keepAwake: true,
   };
   componentDidMount() {
     ScreenCapture.disallowScreenshot(this.state.disallowScreenshot)
@@ -36,8 +36,8 @@ export default class App extends PureComponent {
           }, () => {
             ScreenCapture.disallowScreenshot(this.state.disallowScreenshot)
           })
-        }} style={{ padding: 15, backgroundColor: this.state.disallowScreenshot ? '#FF6666' : '#5BE55B', margin: 15 }}>
-          <Text>{!this.state.disallowScreenshot ? 'Allow' : 'Disallow'} screenshot</Text>
+        }} style={{ padding: 15, backgroundColor: this.state.disallowScreenshot ? '#5BE55B' : '#FF6666', margin: 15 }}>
+          <Text>Disallow screenshot {!this.state.disallowScreenshot ? 'OFF' : 'ON'}</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           this.setState({
