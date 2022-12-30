@@ -13,7 +13,7 @@ npm i react-native-screen-capture
 ## Usage
 
 ```js
-import { ScreenCapture } from 'react-native-screen-capture';
+import ScreenCapture from 'react-native-screen-capture';
 
 // disable screenshots
 ScreenCapture.disallowScreenshot(true);
