@@ -50,4 +50,25 @@ public class ScreenCaptureModule extends ReactContextBaseJavaModule {
             }
         }
     }
+
+    @ReactMethod
+    public void keepScreen(Boolean status) {
+        if (this.reactContext.hasCurrentActivity()) {
+            if (status == true) {
+                this.reactContext.getCurrentActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        reactContext.getCurrentActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                    }
+                });
+            } else {
+                this.reactContext.getCurrentActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        reactContext.getCurrentActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+                    }
+                });
+            }
+        }
+    }
 }
