@@ -15,11 +15,11 @@ import ScreenCapture from 'react-native-screen-capture';
 export default class App extends Component<{}> {
   state = {
     disallowScreenshot: false,
-    keepScreen: false,
+    keepAwake: false,
   };
   componentDidMount() {
     ScreenCapture.disallowScreenshot(this.state.disallowScreenshot)
-    ScreenCapture.keepScreen(this.state.keepScreen)
+    ScreenCapture.keepAwake(this.state.keepAwake)
     // ScreenCapture.sampleMethod('Testing', 123, (message) => {
     //   this.setState({
     //     status: 'native callback received',
@@ -41,12 +41,12 @@ export default class App extends Component<{}> {
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {
           this.setState({
-            keepScreen: !this.state.keepScreen
+            keepAwake: !this.state.keepAwake
           }, () => {
-            ScreenCapture.keepScreen(this.state.keepScreen)
+            ScreenCapture.keepAwake(this.state.keepAwake)
           })
-        }} style={{ padding: 15, backgroundColor: this.state.keepScreen ? '#5BE55B' : '#FF6666', margin: 15 }}>
-          <Text>Keep screen {!this.state.keepScreen ? 'OFF' : 'ON'}</Text>
+        }} style={{ padding: 15, backgroundColor: this.state.keepAwake ? '#5BE55B' : '#FF6666', margin: 15 }}>
+          <Text>Keep screen {!this.state.keepAwake ? 'OFF' : 'ON'}</Text>
         </TouchableOpacity>
       </View>
     );

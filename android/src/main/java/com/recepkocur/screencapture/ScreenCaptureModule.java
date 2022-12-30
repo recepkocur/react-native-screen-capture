@@ -52,7 +52,7 @@ public class ScreenCaptureModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void keepScreen(Boolean status) {
+    public void keepAwake(Boolean status) {
         if (this.reactContext.hasCurrentActivity()) {
             if (status == true) {
                 this.reactContext.getCurrentActivity().runOnUiThread(new Runnable() {

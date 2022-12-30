@@ -23,11 +23,11 @@ ScreenCapture.disallowScreenshot(true);
 // enable screenshots
 ScreenCapture.disallowScreenshot(false);
 
-// Keep screen on
-ScreenCapture.keepScreen(true);
+// Keep awake true
+ScreenCapture.keepAwake(true);
 
-// Keep screen off
-ScreenCapture.keepScreen(false);
+// Keep awake false
+ScreenCapture.keepAwake(false);
 ```
 
 ## Roadmap
@@ -36,8 +36,8 @@ ScreenCapture.keepScreen(false);
 | :--------: | :------: | :--------------------- |
 |     ✅     | Android  | Screenshot disable     |
 |     🚧     | iOS      | Screenshot disable     |
-|     ✅     | Android  | Keep screen on or off  |
-|     🚧     | iOS      | Keep screen on or off  |
+|     ✅     | Android  | Keep awake on or off  |
+|     🚧     | iOS      | Keep awake on or off  |
 |     🚧     | Android  | Record capture disable |
 |     🚧     | iOS      | Record capture disable |
 
