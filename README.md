@@ -26,9 +26,9 @@ ScreenCapture.disallowScreenshot(false);
 
 |   Status   | Platform | Goal                   |
 | :--------: | :------: | :--------------------- |
-|     🚧     | Android  | Screenshot disable     |
+|     ✅     | Android  | Screenshot disable     |
 |     🚧     | iOS      | Screenshot disable     |
-|     🚧     | Android  | Keep screen on or off  |
+|     ✅     | Android  | Keep screen on or off  |
 |     🚧     | iOS      | Keep screen on or off  |
 |     🚧     | Android  | Record capture disable |
 |     🚧     | iOS      | Record capture disable |
