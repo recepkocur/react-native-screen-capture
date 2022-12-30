@@ -20,6 +20,12 @@ ScreenCapture.disallowScreenshot(true);
 
 // enable screenshots
 ScreenCapture.disallowScreenshot(false);
+
+// Keep screen on
+ScreenCapture.keepScreen(true);
+
+// Keep screen off
+ScreenCapture.keepScreen(false);
 ```
 
 ## Roadmap
