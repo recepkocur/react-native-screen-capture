@@ -2,6 +2,9 @@
 
 package com.recepkocur.screencapture;
 
+import android.app.Activity;
+import android.view.WindowManager;
+
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -21,9 +24,30 @@ public class ScreenCaptureModule extends ReactContextBaseJavaModule {
         return "ScreenCapture";
     }
 
+    // @ReactMethod
+    // public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
+    //     // TODO: Implement some actually useful functionality
+    //     callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
+    // }
+
     @ReactMethod
-    public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
-        // TODO: Implement some actually useful functionality
-        callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
+    public void disallowScreenshot(Boolean status) {
+        if (this.reactContext.hasCurrentActivity()) {
+            if (status == true) {
+                this.reactContext.getCurrentActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        reactContext.getCurrentActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_SECURE);
+                    }
+                });
+            } else {
+                this.reactContext.getCurrentActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        reactContext.getCurrentActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_SECURE);
+                    }
+                });
+            }
+        }
     }
 }
