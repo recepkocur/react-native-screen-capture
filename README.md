@@ -37,7 +37,7 @@ ScreenCapture.keepAwake(false);
 |     ✅     | Android  | Screenshot disable     |
 |     🚧     | iOS      | Screenshot disable     |
 |     ✅     | Android  | Keep awake on or off  |
-|     🚧     | iOS      | Keep awake on or off  |
+|     ✅     | iOS      | Keep awake on or off  |
 |     🚧     | Android  | Record capture disable |
 |     🚧     | iOS      | Record capture disable |
 
