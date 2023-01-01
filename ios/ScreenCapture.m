@@ -17,13 +17,6 @@
     return YES;
 }
 
-#pragma mark - dealloc -
-
-- (void)dealloc {
-    if (dev) NSLog(@"[SC] dealloc");
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
 #pragma mark - reactnative -
 
 RCT_EXPORT_MODULE();
