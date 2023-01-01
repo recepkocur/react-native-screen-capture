@@ -1,7 +1,8 @@
 // main index.js
 
-import { NativeModules } from 'react-native';
+import { NativeModules, NativeEventEmitter, } from 'react-native';
 
-const { ScreenCapture } = NativeModules;
+export const { ScreenCapture } = NativeModules;
 
-export default ScreenCapture;
+export const disallowScreenshot = ScreenCapture.disallowScreenshot
+export const keepAwake = ScreenCapture.keepAwake

@@ -1,4 +1,3 @@
-- create-react-native-module ScreenCapture --native-package-id com.recepkocur.screencapture --generate-example --author-email recepkocur@gmail.com --author-name "Recep Kocur" --github-account recepkocur --platforms "ios,android" --example-react-native-template react-native@0.67.5
 - https://www.locklizard.com/stop-screenshots-grabbers/
 - https://aboutreact.com/react-native-block-disable-screenshots/
 - https://github.com/gijoehosaphat/react-native-keep-screen-on

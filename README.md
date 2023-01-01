@@ -1,10 +1,8 @@
 # react-native-screen-capture
 
-> Please do not install. It is under construction.
-
 **`react-native-screen-capture`** allows you to protect screens in your app from being captured or recorded, as well as be notified if a screenshot is taken while your app is foregrounded.
 
-**Keep Awake** provides a React hook that prevents the screen from sleeping and a pair of functions to enable this behavior imperatively.
+**Keep Awake**, keep the screen from going to sleep. iOS and Android
 
 ## Installation
 
@@ -15,31 +13,35 @@ npm i react-native-screen-capture
 ## Usage
 
 ```js
-import ScreenCapture from 'react-native-screen-capture';
+import { disallowScreenshot, keepAwake } from 'react-native-screen-capture';
 
 // disable screenshots
-ScreenCapture.disallowScreenshot(true);
+disallowScreenshot(true);
 
 // enable screenshots
-ScreenCapture.disallowScreenshot(false);
+disallowScreenshot(false);
 
 // Keep awake true
-ScreenCapture.keepAwake(true);
+keepAwake(true);
 
 // Keep awake false
-ScreenCapture.keepAwake(false);
+keepAwake(false);
 ```
 
 ## Roadmap
 
-|   Status   | Platform | Goal                   |
-| :--------: | :------: | :--------------------- |
-|     ✅     | Android  | Screenshot disable     |
-|     🚧     | iOS      | Screenshot disable     |
-|     ✅     | Android  | Keep awake on or off  |
-|     ✅     | iOS      | Keep awake on or off  |
-|     🚧     | Android  | Record capture disable |
-|     🚧     | iOS      | Record capture disable |
+|   Status   | Platform | Goal                    |
+| :--------: | :------: | :---------------------- |
+|     ✅     | Android  | Screenshot disable      |
+|     ✅     | iOS      | Screenshot disable      |
+|     ✅     | Android  | Keep awake on or off    |
+|     ✅     | iOS      | Keep awake on or off    |
+|     🚧     | Android  | Record capture disable  |
+|     🚧     | iOS      | Record capture disable  |
+|     🚧     | Android  | Screenshot callback     |
+|     🚧     | iOS      | Screenshot callback     |
+|     🚧     | Android  | Record capture callback |
+|     🚧     | iOS      | Record capture callback |
 
 ## Contributing
 
