@@ -24,12 +24,6 @@ public class ScreenCaptureModule extends ReactContextBaseJavaModule {
         return "ScreenCapture";
     }
 
-    // @ReactMethod
-    // public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
-    //     // TODO: Implement some actually useful functionality
-    //     callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
-    // }
-
     @ReactMethod
     public void disallowScreenshot(Boolean status) {
         if (this.reactContext.hasCurrentActivity()) {
