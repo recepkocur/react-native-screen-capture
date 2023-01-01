@@ -4,12 +4,12 @@ import { disallowScreenshot, keepAwake } from 'react-native-screen-capture';
 
 export default class App extends PureComponent {
    state = {
-      keepAwake: true,
       disallowScreenshot: true,
+      keepAwake: true,
    };
    componentDidMount() {
-      keepAwake(this.state.keepAwake)
       disallowScreenshot(this.state.disallowScreenshot)
+      keepAwake(this.state.keepAwake)
    }
    render() {
       return (
