@@ -1,8 +1,8 @@
 # react-native-screen-capture
 
-**`react-native-screen-capture`** allows you to protect screens in your app from being captured or recorded, as well as be notified if a screenshot is taken while your app is foregrounded.
+**`Screen Capture`** allows you to protect screens in your app from being captured or recorded, as well as be notified if a screenshot is taken while your app is foregrounded.
 
-**Keep Awake**, keep the screen from going to sleep. iOS and Android
+**`Keep Awake`**, keep the screen from going to sleep. iOS and Android
 
 ## Installation
 
@@ -13,7 +13,7 @@ npm i react-native-screen-capture
 ## Usage
 
 ```js
-import { disallowScreenshot, keepAwake } from 'react-native-screen-capture';
+import { disallowScreenshot, keepAwake, userDidTakeScreenshot, } from 'react-native-screen-capture';
 
 // disable screenshots
 disallowScreenshot(true);
@@ -26,6 +26,15 @@ keepAwake(true);
 
 // Keep awake false
 keepAwake(false);
+
+// userDidTakeScreenshot
+// function to execute when user did a screenshot (ios only)
+const onScreenshot = () => {
+   console.log("Hey, screenshot detected!");
+};
+// its important have an "unsubscribe" to remove listener from screen is dismounted
+const eventListener = userDidTakeScreenshot(onScreenshot);
+eventListener.remove();
 ```
 
 ## Roadmap
@@ -39,7 +48,7 @@ keepAwake(false);
 |     🚧     | Android  | Record capture disable  |
 |     🚧     | iOS      | Record capture disable  |
 |     🚧     | Android  | Screenshot callback     |
-|     🚧     | iOS      | Screenshot callback     |
+|     ✅     | iOS      | Screenshot callback     |
 |     🚧     | Android  | Record capture callback |
 |     🚧     | iOS      | Record capture callback |
 
@@ -50,6 +59,3 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
-
-> Please do not install. It is under construction.
-> **_NOTE:_** Currently this plugin only work for Android device
