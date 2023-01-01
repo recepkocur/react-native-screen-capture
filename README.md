@@ -50,3 +50,6 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
+
+> Please do not install. It is under construction.
+> **_NOTE:_** Currently this plugin only work for Android device
