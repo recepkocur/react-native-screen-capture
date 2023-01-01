@@ -1,25 +1,24 @@
 import React, { PureComponent } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, } from 'react-native';
-import { disallowScreenshot, keepAwake } from 'react-native-screen-capture';
-// import { disallowScreenshot, keepAwake, userDidTakeScreenshot } from 'react-native-screen-capture';
+import { disallowScreenshot, keepAwake, userDidTakeScreenshot } from 'react-native-screen-capture';
 
 export default class App extends PureComponent {
    state = {
       keepAwake: true,
       disallowScreenshot: true,
-      // screenCaptureListener: null,
+      screenCaptureListener: null,
    };
    componentDidMount() {
       keepAwake(this.state.keepAwake)
       disallowScreenshot(this.state.disallowScreenshot)
-      // this.setState({
-      //    screenCaptureListener: userDidTakeScreenshot(() => {
-      //       console.log('userDidTakeScreenshot')
-      //    })
-      // });
+      this.setState({
+         screenCaptureListener: userDidTakeScreenshot(() => {
+            console.log('userDidTakeScreenshot')
+         })
+      });
    }
    componentWillUnmount() {
-      // this.state.screenCaptureListener.remove()
+      this.state.screenCaptureListener.remove()
    }
    render() {
       return (
@@ -42,8 +41,7 @@ export default class App extends PureComponent {
             }} style={{ padding: 15, backgroundColor: this.state.keepAwake ? '#5BE55B' : '#FF6666', margin: 15 }}>
                <Text>Keep screen {!this.state.keepAwake ? 'OFF' : 'ON'}</Text>
             </TouchableOpacity>
-
-            {/*<TouchableOpacity onPress={() => {
+            <TouchableOpacity onPress={() => {
                if (!this.state.screenCaptureListener) {
                   this.setState({
                      screenCaptureListener: userDidTakeScreenshot(() => {
@@ -58,7 +56,7 @@ export default class App extends PureComponent {
                }
             }} style={{ padding: 15, backgroundColor: this.state.screenCaptureListener ? '#5BE55B' : '#FF6666', margin: 15 }}>
                <Text>userDidTakeScreenshot {!this.state.screenCaptureListener ? 'OFF' : 'ON'}</Text>
-            </TouchableOpacity>*/}
+            </TouchableOpacity>
          </View>
       );
    }
