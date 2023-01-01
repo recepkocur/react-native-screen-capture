@@ -15,7 +15,7 @@ npm i react-native-screen-capture
 ## Usage
 
 ```js
-import { disallowScreenshot, keepAwake } from 'react-native-screen-capture';
+import { disallowScreenshot, keepAwake, userDidTakeScreenshot, } from 'react-native-screen-capture';
 
 // disable screenshots
 disallowScreenshot(true);
@@ -28,6 +28,15 @@ keepAwake(true);
 
 // Keep awake false
 keepAwake(false);
+
+// userDidTakeScreenshot
+// function to execute when user did a screenshot (ios only)
+const onScreenshot = () => {
+   console.log("Hey, screenshot detected!");
+};
+// its important have an "unsubscribe" to remove listener from screen is dismounted
+const eventListener = userDidTakeScreenshot(onScreenshot);
+eventListener.remove();
 ```
 
 ## Roadmap
@@ -38,6 +47,12 @@ keepAwake(false);
 |     ✅     | iOS      | Screenshot disable      |
 |     ✅     | Android  | Keep awake on or off    |
 |     ✅     | iOS      | Keep awake on or off    |
+|     🚧     | Android  | Record capture disable  |
+|     🚧     | iOS      | Record capture disable  |
+|     🚧     | Android  | Screenshot callback     |
+|     ✅     | iOS      | Screenshot callback     |
+|     🚧     | Android  | Record capture callback |
+|     🚧     | iOS      | Record capture callback |
 
 ## Contributing
 
