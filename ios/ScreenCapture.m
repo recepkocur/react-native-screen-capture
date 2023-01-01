@@ -88,16 +88,4 @@ RCT_EXPORT_METHOD(disallowScreenshot:(BOOL)status)
     }
 }
 
-#pragma mark - reactnative samples -
-
-RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(getDeviceName) {
-    if (dev) NSLog(@"[SC] getDeviceName");
-    return [[UIDevice currentDevice] name];
-}
-
-RCT_EXPORT_METHOD(sampleMethod:(NSString *)stringArgument numberParameter:(nonnull NSNumber *)numberArgument callback:(RCTResponseSenderBlock)callback) {
-    if (dev) NSLog(@"[SC] sampleMethod");
-    callback(@[[NSString stringWithFormat: @"numberArgument: %@ stringArgument: %@", numberArgument, stringArgument]]);
-}
-
 @end
