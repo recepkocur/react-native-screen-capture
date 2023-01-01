@@ -71,10 +71,4 @@ public class ScreenCaptureModule extends ReactContextBaseJavaModule {
             }
         }
     }
-
-    // @ReactMethod
-    // public void addListener(String eventName) { }
-
-    // @ReactMethod
-    // public void removeListeners(Integer count) { }
 }
