@@ -9,6 +9,8 @@
 ```sh
 npm i react-native-screen-capture
 ```
+## Preview
+![](preview.gif)
 
 ## Usage
 
