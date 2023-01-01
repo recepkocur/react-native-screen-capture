@@ -38,12 +38,6 @@ keepAwake(false);
 |     ✅     | iOS      | Screenshot disable      |
 |     ✅     | Android  | Keep awake on or off    |
 |     ✅     | iOS      | Keep awake on or off    |
-|     🚧     | Android  | Record capture disable  |
-|     🚧     | iOS      | Record capture disable  |
-|     🚧     | Android  | Screenshot callback     |
-|     🚧     | iOS      | Screenshot callback     |
-|     🚧     | Android  | Record capture callback |
-|     🚧     | iOS      | Record capture callback |
 
 ## Contributing
 
