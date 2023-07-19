@@ -1,7 +1,7 @@
 {
   "name": "react-native-screen-capture",
   "title": "React Native Screen Capture",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "react-native-screen-capture allows you to protect screens in your app from being captured or recorded, as well as be notified if a screenshot is taken while your app is foregrounded.",
   "main": "index.js",
   "files": [
@@ -20,7 +20,18 @@
     "baseUrl": "https://github.com/recepkocur/react-native-screen-capture"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "library",
+    "module",
+    "component",
+    "ios",
+    "android",
+    "screen capture",
+    "keep awake",
+    "screenshot",
+    "FLAG_SECURE",
+    "FLAG_KEEP_SCREEN_ON",
+    "setSecureTextEntry"
   ],
   "author": {
     "name": "Recep Kocur",
@@ -30,11 +41,11 @@
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {
-    "react": ">=16.8.1",
-    "react-native": ">=0.60.0-rc.0 <1.0.x"
+    "react": ">=17.0.2",
+    "react-native": ">=0.67.0-rc.0 <1.0.x"
   },
   "devDependencies": {
-    "react": "^16.9.0",
-    "react-native": "^0.61.5"
+    "react": "^17.0.2",
+    "react-native": "^0.67.5"
   }
 }
