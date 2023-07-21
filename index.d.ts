@@ -14,7 +14,7 @@
 export declare const disallowScreenshot: (value: boolean) => void
 
 /**
- * keepAwake 
+ * keepAwake
  * 
  * Keep the screen from going to sleep. iOS and Android.
  * 
