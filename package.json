@@ -1,7 +1,7 @@
 {
   "name": "react-native-screen-capture",
   "title": "React Native Screen Capture",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "react-native-screen-capture allows you to protect screens in your app from being captured or recorded, as well as be notified if a screenshot is taken while your app is foregrounded.",
   "main": "index.js",
   "files": [
